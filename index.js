@@ -23,7 +23,7 @@ AFRAME.registerComponent('layout', {
     var initialPositions = initialPositions = [];
 
     this.children.forEach(function (childEl) {
-      initialPositions.push(childEl.getComputedAttribute('position'));
+      initialPositions.push(childEl.getAttribute('position'));
     });
 
     this.childAttachedCallback = this.update.bind(this);
@@ -40,7 +40,7 @@ AFRAME.registerComponent('layout', {
     var numChildren = children.length;
     var positionFn;
     var positions;
-    var startPosition = el.getComputedAttribute('position');
+    var startPosition = el.getAttribute('position');
 
     // Calculate different positions based on layout shape.
     switch (data.type) {
